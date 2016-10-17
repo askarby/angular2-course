@@ -1,0 +1,28 @@
+<h2>ngDoCheck hook</h2>
+<p>...giver adgang til at lave custom change-detection vha. metoden <code>ngDoCheck</code> via interfacet<code>DoCheck</code> fra <code>@angular/core</code></p>
+<section>
+  <label>Navn: <input [(ngModel)]="currentUser.username" type="text"></label>
+  <label>Adgangskode: <input [(ngModel)]="currentUser.password" type="password"></label>
+</section>
+
+<button (click)="addUser()">Tilføj</button>
+
+<h3>Brugerliste</h3>
+<div data-alert class="alert-box"
+  *ngFor="let user of users"
+  [ngClass]="{secondary: currentUser !== user}"
+  (click)="currentUser = user">
+
+  {{user.username}}
+  <a href="#" class="close" (click)="removeUser(user)">&times;</a>
+</div>
+
+<div class="row">
+  <div class="large-6 columns logger">
+    <app-object-logger [object]="currentUser"></app-object-logger>
+  </div>
+
+  <div class="large-6 columns logger">
+    <app-list-logger [list]="users"></app-list-logger>
+  </div>
+</div>

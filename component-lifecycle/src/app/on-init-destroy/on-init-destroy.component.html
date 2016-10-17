@@ -1,0 +1,17 @@
+<h2>ngOnInit / ngOnDestroy hook</h2>
+<p>
+  ...giver adgang til at lytte på oprettelse / nedlæggelse af komponent-instanser,
+  vha. metoderne <code>ngOnInit</code> samt <code>ngOnDestroy</code> via hhv. <code>OnInit</code> samt <code>OnDestroy</code> interfaces,
+  fra <code>@angular/core</code>
+<p>
+  <strong>Obs:</strong> Åbn din browsers konsol, se når events bliver triggered. Der bliver logget <code>Initializing!</code> når et element
+  tilføjes listen, og <code>Destroying!</code> når et element fjernes fra listen.
+</p>
+
+<h3>Brugsinstruktioner</h3>
+<p>Knappen <strong>Tilføj</strong>, tilføjer et element til listen. Ved at klikke på et af elementerne i listen, fjernes dette.</p>
+
+<button (click)="addItem()">Tilføj</button>
+<ul>
+  <app-list-item *ngFor="let item of items" [label]="item" (click)="removeItem(item)"></app-list-item>
+</ul>

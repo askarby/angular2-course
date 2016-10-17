@@ -1,0 +1,8 @@
+<h2>ngOnChanges hook</h2>
+<p>...giver adgang til at lytte på ændringer af propreties, vha. metoden <code>ngOnChanges</code> via interfacet <code>OnChanges</code> fra <code>@angular/core</code>
+<section>
+  <label>Navn: <input [(ngModel)]="name" type="text"></label>
+  <label>Alder: <input [(ngModel)]="age" type="text"></label>
+</section>
+
+<app-logger [name]="name" [age]="age"></app-logger>
