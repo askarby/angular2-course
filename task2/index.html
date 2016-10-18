@@ -1,0 +1,121 @@
+<html>
+<head>
+    <title>Opgave #2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.css"/>
+</head>
+<body>
+<header class="fixed">
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <ul class="dropdown menu" data-dropdown-menu>
+                <li class="menu-text">Opgave #2</li>
+            </ul>
+        </div>
+    </div>
+</header>
+<article>
+    <section class="row">
+        <h1>Opgave #2</h1>
+    </section>
+    <section class="row">
+        <div class="large-6 columns">
+            <h2>Kunde</h2>
+            <form name="customer">
+                <div class="row">
+                    <div class="medium-6 columns">
+                        <label>Fornavn
+                            <input name="firstname" type="text" placeholder="Indtast fornavn">
+                        </label>
+                    </div>
+                    <div class="medium-6 columns">
+                        <label>Efternavn(e)
+                            <input name="lastname" type="text" placeholder="Indstast alle efternavne">
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="medium-7 columns">
+                        <label>Vejnavn
+                            <input name="street" type="text" placeholder="Indtast vejnavn">
+                        </label>
+                    </div>
+                    <div class="medium-2 columns">
+                        <label>Nr.
+                            <input name="no" type="text" placeholder="Indstast nr.">
+                        </label>
+                    </div>
+                    <div class="medium-3 columns">
+                        <label>Etage / Bogstav
+                            <input name="floor" type="text" placeholder="Indstast etage / bogstav">
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="medium-12 columns">
+                        <label>E-mail
+                            <input name="email" type="text" placeholder="Indstast e-mail">
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="medium-6 columns">
+                        <label>Telefon, Hjemme
+                            <input name="phone_ome" type="text" placeholder="Indtast telefonnummer">
+                        </label>
+                    </div>
+                    <div class="medium-6 columns">
+                        <label>Arbejde
+                            <input name="phone_work" type="text" placeholder="Indtast telefonnummer">
+                        </label>
+                    </div>
+                </div>
+            </form>
+
+            <hr>
+
+            <h2>Varer</h2>
+            <form name="articles">
+                <table>
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Beskrivelse</th>
+                        <th>Pris</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><input class="chk_article" type="checkbox" data-desc="Støvkost" data-price="200"></td>
+                        <td>Støvkost</td>
+                        <td>200 kr</td>
+                    </tr>
+                    <tr>
+                        <td><input class="chk_article" type="checkbox" data-desc="Affaldssække, 3 stk" data-price="20"></td>
+                        <td>Affaldssække, 3 stk</td>
+                        <td>20 kr</td>
+                    </tr>
+                    <tr>
+                        <td><input class="chk_article" type="checkbox" data-desc="Rengøringsmiddel" data-price="39.95"></td>
+                        <td>Rengøringsmiddel</td>
+                        <td>39.95</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        <div class="large-6 columns">
+            <h2>Kvittering</h2>
+            <pre id="reciept" style="min-height: 620px; border: 1px solid gray;">
+
+            </pre>
+        </div>
+    </section>
+</article>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js"></script>
+<script>
+    $(document).foundation();
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "task2",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "http-server ."
+  },
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  },
+  "dependencies": {
+    "foundation": "^4.2.1-1"
+  }
+}
