@@ -1,0 +1,11 @@
+<h2>Two Way</h2>
+<p>
+  Denne tekst er interpoleret med variablen <code>value</code> som har værdien <code>"{{value}}"</code> <i>(dette er interpolering)</i>.
+</p>
+<p>
+  I eksemplet <a [routerLink]="event">med event (samt property) binding</a> lavede vi egentligt en two-way binding, der findes et direktiv
+  som kan gøre det samme (samt en hel del mere) - <code>ngModel</code>.
+</p>
+<section class="row">
+  <input type="text" [(ngModel)]="value">
+</section>

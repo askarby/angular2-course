@@ -1,0 +1,14 @@
+<h2>Event</h2>
+<p>
+  Denne tekst er interpoleret med variablen <code>value</code> som har værdien <code>"{{value}}"</code> <i>(dette er interpolering)</i>.
+</p>
+<p>
+  Vi kan også binde variablen til egenskaben <code>value</code> på nedenstående <strong>input</strong>-felt.
+</p>
+<p>
+  Vi kan tilmed også binde events (hændelser) til at opdatere vores variabel. Nedenstående <strong>input</strong>-felts
+  <code>keyup</code>-event er blevet bundet til at opdatere indholdet af variablen.
+</p>
+<section class="row">
+  <input type="text" [value]="value" (keyup)="value = $event.target.value">
+</section>

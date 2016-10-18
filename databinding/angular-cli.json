@@ -1,0 +1,63 @@
+{
+  "project": {
+    "version": "1.0.0-beta.17",
+    "name": "databinding"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": "assets",
+      "index": "index.html",
+      "main": "main.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.json",
+      "prefix": "app",
+      "mobile": false,
+      "styles": [
+        "styles.css",
+        "../node_modules/foundation/scss/normalize.scss",
+        "../node_modules/foundation/scss/foundation.scss"
+      ],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/foundation/js/foundation/foundation.js",
+        "../node_modules/foundation/js/foundation/foundation.alerts.js",
+        "../node_modules/foundation/js/foundation/foundation.clearing.js",
+        "../node_modules/foundation/js/foundation/foundation.cookie.js",
+        "../node_modules/foundation/js/foundation/foundation.dropdown.js",
+        "../node_modules/foundation/js/foundation/foundation.forms.js",
+        "../node_modules/foundation/js/foundation/foundation.interchange.js",
+        "../node_modules/foundation/js/foundation/foundation.joyride.js",
+        "../node_modules/foundation/js/foundation/foundation.magellan.js",
+        "../node_modules/foundation/js/foundation/foundation.orbit.js",
+        "../node_modules/foundation/js/foundation/foundation.placeholder.js",
+        "../node_modules/foundation/js/foundation/foundation.reveal.js",
+        "../node_modules/foundation/js/foundation/foundation.section.js",
+        "../node_modules/foundation/js/foundation/foundation.tooltips.js",
+        "../node_modules/foundation/js/foundation/foundation.topbar.js"
+      ],
+      "environments": {
+        "source": "environments/environment.ts",
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "addons": [],
+  "packages": [],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "css",
+    "prefixInterfaces": false
+  }
+}

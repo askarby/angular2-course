@@ -8,9 +8,8 @@ declare var $;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit {
-  title = 'Angular 2 - Livscyklus hooks';
 
-  ngAfterViewInit() {
+  public ngAfterViewInit() {
     $(document).foundation();
     $(document).foundation('topbar', 'reflow');
   }
