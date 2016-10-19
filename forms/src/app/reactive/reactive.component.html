@@ -1,0 +1,98 @@
+<h2>Model-driven (reactive) Form</h2>
+<p>
+  Nedenstående form er udtrykt og bundet vha. en model-driven / reactive form (udtrykt i kode).
+</p>
+
+<h3>Form</h3>
+<section>
+  <form [formGroup]="mainGroup" #contactForm novalidate>
+    <div class="row">
+      <div class="large-1 columns">
+        <label>Tiltales
+          <select name="titulation" formControlName="titulation">
+            <option *ngFor="let titulation of titulations" [value]="titulation">{{titulation}}</option>
+          </select>
+        </label>
+      </div>
+      <div class="large-3 columns">
+        <label>Fornavn
+          <input name="firstname" type="text" placeholder="Indtast fornavn" formControlName="firstname">
+        </label>
+        <small class="error" *ngIf="mainGroup.controls.firstname.invalid">Fornavn er påkrævet!</small>
+      </div>
+      <div class="large-3 columns">
+        <label>Mellemnavn
+          <input name="middlename" type="text" placeholder="Indtast mellemnavn" formControlName="middlename">
+        </label>
+      </div>
+      <div class="large-5 columns">
+        <label>Efternavn(e)
+          <input name="lastname" type="text" placeholder="Indstast alle efternavne" formControlName="lastname">
+        </label>
+        <small class="error" *ngIf="mainGroup.controls.lastname.invalid">Efternavn(e) er påkrævet!</small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-8 columns">
+        <label>Vejnavn
+          <input name="street" type="text" placeholder="Indtast vejnavn" formControlName="street">
+        </label>
+      </div>
+      <div class="large-2 columns">
+        <label>Nr.
+          <input name="no" type="text" placeholder="Indstast nr." formControlName="no" pattern="^\d+$">
+        </label>
+      </div>
+      <div class="large-2 columns">
+        <label>Etage / Bogstav
+          <input name="floor" type="text" placeholder="Indstast etage / bogstav" formControlName="floor">
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-4 columns">
+        <div class="row">
+          <div class="large-1 columns">
+            <input type="radio" formControlName="gender" name="gender" value="male" id="male">
+          </div>
+          <div class="large-5 columns">
+            <label class="inline" for="male">Mand</label>
+          </div>
+          <div class="large-1 columns">
+            <input type="radio" formControlName="gender" name="gender" value="female" id="female">
+          </div>
+          <div class="large-5 columns">
+            <label class="inline" for="female">Kvinde</label>
+          </div>
+        </div>
+      </div>
+      <div class="large-8 columns">
+        <label>E-mail
+          <input name="email" type="text" placeholder="Indstast e-mail" formControlName="email">
+        </label>
+      </div>
+    </div>
+    <div class="row" [formGroup]="phonesGroup">
+      <div class="large-6 columns">
+        <label>Telefon, Hjemme
+          <input name="phone_home" type="text" placeholder="Indtast telefonnummer" formControlName="home">
+        </label>
+      </div>
+      <div class="large-6 columns">
+        <label>Arbejde
+          <input name="phone_work" type="text" placeholder="Indtast telefonnummer"  formControlName="work">
+        </label>
+      </div>
+    </div>
+  </form>
+</section>
+
+<h3>Styling</h3>
+<section>
+  <pre>{{contactForm.className}}</pre>
+</section>
+
+<h3>Output</h3>
+<section>
+  <pre>{{mainGroup.value | json}}</pre>
+</section>
