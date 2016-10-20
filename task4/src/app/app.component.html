@@ -79,7 +79,7 @@
           </thead>
           <tbody>
           <tr *ngFor="let article of articles">
-            <td><input class="chk_article" type="checkbox" (change)="duster.selected = $event.target.checked"></td>
+            <td><input class="chk_article" type="checkbox" (change)="article.selected = $event.target.checked"></td>
             <td>{{article.description}}</td>
             <td [style.color]="getPriceColor(article)">{{article.price}} kr</td>
           </tr>
@@ -92,7 +92,7 @@
       <pre id="reciept" style="min-height: 620px; border: 1px solid gray;">
 {{customer}}
 
-<div *ngFor="let article of articles">{{article.description}}: <span [style.color]="getPriceColor(article)">{{article.price}} kr</span></div>
+<div *ngFor="let article of articles"><div *ngIf="article.selected">{{article.description}}: <span [style.color]="getPriceColor(article)">{{article.price}} kr</span></div></div>
 -----------------------
 Total: <span [style.color]="getPriceColor(total)">{{total}}</span> kr
       </pre>
