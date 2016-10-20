@@ -1,0 +1,29 @@
+<h2>Custom validator</h2>
+<p>
+  Nedenstående 2 forme består af en form, med et enkelt felt hvor et navn skal indtastes. Der er tilknyttet en
+  custom validator som sørger for at navnene har stort begyndelsesbogstav.
+</p>
+
+<h3>Model-based form / function-based validation</h3>
+<form novalidate [formGroup]="modelBased">
+  <div class="row">
+    <div class="large-6 columns">
+      <label>Fulde navn
+        <input name="fullName" type="text" placeholder="Indtast fulde navn" formControlName="fullName">
+      </label>
+      <small class="error" *ngIf="modelBased.controls.fullName.invalid">Fulde navn skal starte med stort bogstav!</small>
+    </div>
+  </div>
+</form>
+
+<h3>Template-based form / directive-based validation</h3>
+<form novalidate>
+  <div class="row">
+    <div class="large-6 columns">
+      <label>Fulde navn
+        <input name="fullName" type="text" placeholder="Indtast fulde navn" [(ngModel)]="fullName" name-casing #ref="ngModel">
+      </label>
+      <small class="error" *ngIf="!ref.valid">Fulde navn skal starte med stort bogstav!</small>
+    </div>
+  </div>
+</form>
