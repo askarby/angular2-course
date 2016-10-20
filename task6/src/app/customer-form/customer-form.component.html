@@ -1,0 +1,50 @@
+<form [formGroup]="customerModel" novalidate>
+  <div class="row">
+    <div class="medium-6 columns">
+      <label>Fornavn
+        <input name="firstname" type="text" placeholder="Indtast fornavn" formControlName="firstname">
+      </label>
+    </div>
+    <div class="medium-6 columns">
+      <label>Efternavn(e)
+        <input name="lastname" type="text" placeholder="Indtast alle efternavne" formControlName="lastnames">
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-7 columns">
+      <label>Vejnavn
+        <input name="street" type="text" placeholder="Indtast vejnavn" formControlName="street">
+      </label>
+    </div>
+    <div class="medium-2 columns">
+      <label>Nr.
+        <input name="no" type="text" placeholder="Indtast nr." formControlName="no">
+      </label>
+    </div>
+    <div class="medium-3 columns">
+      <label>Etage / Bogstav
+        <input name="floor" type="text" placeholder="Indtast etage / bogstav" formControlName="floorLetter">
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-12 columns">
+      <label>E-mail
+        <input name="email" type="text" placeholder="Indtast e-mail" formControlName="email">
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-6 columns">
+      <label>Telefon, Hjemme
+        <input name="phone_ome" type="text" placeholder="Indtast telefonnummer" formControlName="phoneHome">
+      </label>
+    </div>
+    <div class="medium-6 columns">
+      <label>Arbejde
+        <input name="phone_work" type="text" placeholder="Indtast telefonnummer" formControlName="phoneWork">
+      </label>
+    </div>
+  </div>
+</form>

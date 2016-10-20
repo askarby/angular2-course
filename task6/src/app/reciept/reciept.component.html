@@ -1,0 +1,7 @@
+<pre id="reciept" style="min-height: 620px; border: 1px solid gray;">
+{{customer}}
+
+<div *ngFor="let article of articles"><div *ngIf="article.selected">{{article.description}}: <span [style.color]="getPriceColor(article)">{{article.price}} kr</span></div></div>
+-----------------------
+Total: <span [style.color]="getPriceColor(total)">{{total}}</span> kr
+</pre>

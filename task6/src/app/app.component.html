@@ -1,0 +1,28 @@
+<header class="fixed">
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li class="menu-text">Opgave #6</li>
+      </ul>
+    </div>
+  </div>
+</header>
+<article>
+  <section class="row">
+    <h1>Opgave #6</h1>
+  </section>
+  <section class="row">
+    <div class="large-6 columns">
+      <h2>Kunde</h2>
+      <app-customer-form [customer]="customer"></app-customer-form>
+      <hr>
+
+      <h2>Varer</h2>
+      <app-article-table [articles]="articles"></app-article-table>
+    </div>
+    <div class="large-6 columns">
+      <h2>Kvittering</h2>
+      <app-reciept [customer]="customer" [articles]="articles"></app-reciept>
+    </div>
+  </section>
+</article>
