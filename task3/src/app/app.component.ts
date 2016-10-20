@@ -58,8 +58,4 @@ export class AppComponent implements AfterViewInit {
     }
     return total;
   }
-
-  public log(event) {
-    console.log(event);
-  }
 }
