@@ -1,0 +1,111 @@
+<header class="fixed">
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li class="menu-text">Opgave #3</li>
+      </ul>
+    </div>
+  </div>
+</header>
+<article>
+  <section class="row">
+    <h1>Opgave #3</h1>
+  </section>
+  <section class="row">
+    <div class="large-6 columns">
+      <h2>Kunde</h2>
+      <form name="customer">
+        <div class="row">
+          <div class="medium-6 columns">
+            <label>Fornavn
+              <input name="firstname" type="text" placeholder="Indtast fornavn" [(ngModel)]="customer.firstname">
+            </label>
+          </div>
+          <div class="medium-6 columns">
+            <label>Efternavn(e)
+              <input name="lastname" type="text" placeholder="Indtast alle efternavne" [(ngModel)]="customer.lastnames">
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="medium-7 columns">
+            <label>Vejnavn
+              <input name="street" type="text" placeholder="Indtast vejnavn" [(ngModel)]="customer.street">
+            </label>
+          </div>
+          <div class="medium-2 columns">
+            <label>Nr.
+              <input name="no" type="text" placeholder="Indtast nr." [(ngModel)]="customer.no">
+            </label>
+          </div>
+          <div class="medium-3 columns">
+            <label>Etage / Bogstav
+              <input name="floor" type="text" placeholder="Indtast etage / bogstav" [(ngModel)]="customer.floorLetter">
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="medium-12 columns">
+            <label>E-mail
+              <input name="email" type="text" placeholder="Indtast e-mail" [(ngModel)]="customer.email">
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="medium-6 columns">
+            <label>Telefon, Hjemme
+              <input name="phone_ome" type="text" placeholder="Indtast telefonnummer" [(ngModel)]="customer.phoneHome">
+            </label>
+          </div>
+          <div class="medium-6 columns">
+            <label>Arbejde
+              <input name="phone_work" type="text" placeholder="Indtast telefonnummer" [(ngModel)]="customer.phoneWork">
+            </label>
+          </div>
+        </div>
+      </form>
+
+      <hr>
+
+      <h2>Varer</h2>
+      <form name="articles">
+        <table>
+          <thead>
+          <tr>
+            <th></th>
+            <th>Beskrivelse</th>
+            <th>Pris</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><input class="chk_article" type="checkbox" (change)="duster.selected = $event.target.checked"></td>
+            <td>{{duster.description}}</td>
+            <td>{{duster.price}} kr</td>
+          </tr>
+          <tr>
+            <td><input class="chk_article" type="checkbox" (change)="bags.selected = $event.target.checked"></td>
+            <td>{{bags.description}}</td>
+            <td>{{bags.price}} kr</td>
+          </tr>
+          <tr>
+            <td><input class="chk_article" type="checkbox" (change)="cleaner.selected = $event.target.checked"></td>
+            <td>{{cleaner.description}}</td>
+            <td>{{cleaner.price}} kr</td>
+          </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+    <div class="large-6 columns">
+      <h2>Kvittering</h2>
+      <pre id="reciept" style="min-height: 620px; border: 1px solid gray;">
+{{customer}}
+
+{{purchases}}
+-----------------------
+Total: {{total}}kr
+      </pre>
+    </div>
+  </section>
+</article>
