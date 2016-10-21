@@ -1,0 +1,21 @@
+<h2>Service</h2>
+<p>
+  Nedenstående eksempel benytter sig af <code>storage.service.ts</code> til at gemme ord i <strong>LocalStorage</strong>.
+  Dette vil gøre at ændringer bliver persisteret på tværs af reloads.
+</p>
+
+<form novalidate>
+  <div class="row">
+    <div class="medium-12 columns">
+      <label>
+        Ord:
+        <input name="word" [(ngModel)]="word" (blur)="addWord($event.target.value); $event.target.value = '';">
+      </label>
+    </div>
+  </div>
+</form>
+
+<h3>Ordliste</h3>
+<ul>
+  <li *ngFor="let word of words">{{word}}</li>
+</ul>
