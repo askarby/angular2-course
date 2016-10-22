@@ -1,0 +1,28 @@
+<header class="fixed">
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a routerLink="/">Dependency Injection</a></h1>
+      </li>
+      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- Left Nav Section -->
+      <ul class="left">
+        <li><a routerLink="/simple">Simpel Injection</a></li>
+        <li><a routerLink="/type">Type Injection</a></li>
+        <li><a routerLink="/existing">Type Injection - Take 2</a></li>
+        <li><a routerLink="/value">Value Injection</a></li>
+        <li><a routerLink="/factory">Factory Instantiation</a></li>
+        <li><a routerLink="/token">Opaque Token</a></li>
+      </ul>
+    </section>
+  </nav>
+</header>
+<article>
+  <section class="row">
+    <router-outlet></router-outlet>
+  </section>
+</article>

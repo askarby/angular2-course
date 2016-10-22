@@ -1,0 +1,26 @@
+<div class="row">
+  <h2>Type-replacement Injection <small>Take 2</small></h2>
+  <p>
+    Følgende komponent er implementeret med to forskellige hensyn.
+  </p>
+  <ul>
+    <li>
+      den <strong>venstre</strong> komponent benytter sig af en <code>DoubleCounterService</code> til
+      at tælle med, men bruger <code>useClass</code> provider-konfigurationen til at få en ny <code>CounterService</code> instans ind.
+    </li>
+    <li>
+      den <strong>højre</strong> komponent benytter sig ligeledes af <code>DoubleCounterService</code> til
+      at tælle med, men bruger <code>useExisting</code> provider-konfigurationen til at få en den globale <code>CounterService</code> instans ind.<br>
+      Prøv at gå til <strong><a routerLink="/simple">Simple Injection</a></strong> siden og se at tællerne følges ad!
+    </li>
+  </ul>
+
+</div>
+<div class="row">
+  <div class="large-6 columns">
+    <app-left></app-left>
+  </div>
+  <div class="large-6 columns">
+    <app-right></app-right>
+  </div>
+</div>
