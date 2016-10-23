@@ -1,25 +1,18 @@
 import { Injectable } from '@angular/core';
+import { Customer } from './customer.model';
 import { Http, Headers, RequestOptions } from '@angular/http';
-import { Data } from './data.model';
-
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/throw';
-
-// Operators
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/operator/map';
+import "./rxjs";
 
 @Injectable()
-export class DataService {
-  private readonly URL = 'http://localhost:8080/api/test';
+export class CustomerService {
+  private readonly URL = 'http://localhost:8080/api/customers';
 
   constructor(private http: Http) {
   }
 
-  public saveData(data: Data[]): Observable<Data[]> {
-    let body = JSON.stringify(data);
+  public saveCustomers(customers: Customer[]): Observable<Customer[]> {
+    let body = JSON.stringify(customers);
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
@@ -28,7 +21,9 @@ export class DataService {
       .map((response) => {
         let output = response.json().data as any[] || [];
         return output.map((each) => {
-          return new Data(each.name, each.age);
+          return new Customer(each.firstname, each.lastnames, each.street,
+                              each.no, each.floorLetter, each.email,
+                              each.phoneHome, each.phoneWork);
         });
       })
       .catch((error) => {
@@ -36,18 +31,19 @@ export class DataService {
       })
   }
 
-  public getData(): Observable<Data[]> {
+  public getAll(): Observable<Customer[]> {
     return this.http
       .get(this.URL)
       .map((response) => {
         let output = response.json() as any[] || [];
         return output.map((each) => {
-          return new Data(each.name, each.age);
+          return new Customer(each.firstname, each.lastnames, each.street,
+                              each.no, each.floorLetter, each.email,
+                              each.phoneHome, each.phoneWork);
         });
       })
       .catch((error) => {
         return Observable.throw(`Unable to fetch data - cause: ${error}`);
       });
   }
-
 }
