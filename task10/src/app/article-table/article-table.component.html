@@ -1,0 +1,18 @@
+<form name="articles">
+  <table>
+    <thead>
+    <tr>
+      <th></th>
+      <th>Beskrivelse</th>
+      <th>Pris</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let article of articles">
+      <td><input class="chk_article" type="checkbox" (change)="article.selected = $event.target.checked"></td>
+      <td>{{article.description}}</td>
+      <td [pricing]="article.price">{{article.price}} kr</td>
+    </tr>
+    </tbody>
+  </table>
+</form>
