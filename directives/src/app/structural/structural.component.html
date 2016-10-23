@@ -1,0 +1,10 @@
+<h2>Structural directive</h2>
+<p>
+  ... har jeg konceptuelt forstået hvad går ud på, men at forstå det 100% til bunds, har jeg endnu
+  ikke. Derfor er dette blot en implementering af <code>unless</code>-directivet fra Angular 2's dokumentation:
+  <a href="https://angular.io/docs/ts/latest/guide/structural-directives.html">som kan findes her...</a>
+</p>
+
+
+<p><label>Afkryds mig! <input type="checkbox" #chk></label></p>
+<p *unless="chk.checked">Denne tekst forsvinder når ovenstående checkbox er "afkrydset"</p>
