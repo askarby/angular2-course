@@ -56,7 +56,10 @@ const update = (req, res, next) => {
             return writeFile(fileName, JSON.stringify(req.body));
         })
         .then(() => {
-            res.status(200).json({ message: `Saved content to ${fileName}`});
+            res.status(200).json({ 
+                message: `Saved content to ${fileName}`,
+                data: req.body
+            });
         })
         .catch(next);
     } else {
