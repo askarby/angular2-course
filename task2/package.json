@@ -2,12 +2,14 @@
   "name": "task2",
   "version": "1.0.0",
   "scripts": {
+    "precompile": "node-sass --output style ./style.scss",
     "compile": "tsc --outDir js",
     "prestart": "npm run compile",
     "start": "http-server ."
   },
   "devDependencies": {
-    "http-server": "^0.9.0"
+    "http-server": "^0.9.0",
+    "node-sass": "^3.10.1"
   },
   "dependencies": {
     "foundation": "^4.2.1-1"
