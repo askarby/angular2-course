@@ -1,0 +1,40 @@
+<header class="fixed">
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="/">Pipes</a></h1>
+      </li>
+      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- Left Nav Section -->
+      <ul class="left">
+
+      </ul>
+    </section>
+  </nav>
+</header>
+<article>
+  <section class="row">
+    <!-- Content -->
+    <div class="large-6 columns">
+      <h2>Ord</h2>
+      <p>Brug nedenstående felt for at tilføje ord og oversætte det til leetspeak</p>
+      <form novalidate>
+        <label>
+          Ord:
+          <input #word type="text">
+        </label>
+        <button (click)="addWord(word.value)">Tilføj</button>
+      </form>
+    </div>
+    <div class="large-6 columns">
+      <h2>Ordliste</h2>
+      <ul>
+        <li *ngFor="let word of words">{{word | leet}}</li>
+      </ul>
+    </div>
+  </section>
+</article>
