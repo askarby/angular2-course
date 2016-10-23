@@ -2,6 +2,8 @@
   "name": "task2",
   "version": "1.0.0",
   "scripts": {
+    "compile": "tsc --outDir js",
+    "prestart": "npm run compile",
     "start": "http-server ."
   },
   "devDependencies": {
