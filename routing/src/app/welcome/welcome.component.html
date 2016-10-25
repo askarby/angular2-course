@@ -1,0 +1,37 @@
+<h2>Angular 2 - Routing</h2>
+<section>
+  <p>
+    Vælg et afsnit fra menu'en i toppen af siden. Nedenstående definitionsliste forklarer hvad de forskellige
+    afsnit demonstrerer (af routing-funktionalitet i Angular 2).
+  </p>
+  <dl>
+    <dt>Statisk</dt>
+    <dd>Demonstrerer en almindelig statisk route.</dd>
+
+    <dt>Dynamisk</dt>
+    <dd>Demonstrerer en dynamisk route, der tager imod en parameter.</dd>
+
+    <dt>Beskyttet</dt>
+    <dd>Demonstrerer en route der er beskyttet af en <code>CanActivate</code> guard.</dd>
+
+    <dt>Pre-fetch</dt>
+    <dd>Demonstrerer en route der får sine data pre-fetched vha. et <code>Resolve</code> hook.</dd>
+
+    <dt>Dirty-guard</dt>
+    <dd>Demonstrerer en route der er beskyttet af en <code>CanDeactivate</code> guard.</dd>
+
+    <dt>Lazy-load</dt>
+    <dd>
+      Demonstrerer en route der indlæser et nyt modul vha. lazy-loading. Denne route er yderligere
+      beskyttet af en <code>CanLoad</code> guard.
+    </dd>
+  </dl>
+  <p>
+    Der er konfigureret et wildcard i routing-mekanismen, som gør at vis du forsøger at hente (ved at
+    manuelt indtaste en ugyldig URL) en ukendt side, præsenteres du for en 404 besked.
+  </p>
+  <p>
+    Prøv f.eks. at klikke på dette link <a routerLink="/not/a/valid/url">/not/a/valid/url</a>...
+  </p>
+
+</section>
