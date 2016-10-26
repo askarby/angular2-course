@@ -1,0 +1,11 @@
+<h2>Dynamisk</h2>
+<p>
+  Denne route er statisk mapped, og kan tilgås vha. url'en <a href="/users">/users</a>.
+  Det dynamiske aspekt kommer ind, når du prøver at klikke på en bruger nedenfor.
+</p>
+<h3>Brugere</h3>
+<ul>
+  <li *ngFor="let user of users">
+    <a [routerLink]="[user.id]">{{user.name}}</a>
+  </li>
+</ul>

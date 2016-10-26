@@ -1,4 +1,5 @@
 import './polyfills.ts';
+import 'rxjs/Rx'; // Add all statics and operators to Observable!
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';

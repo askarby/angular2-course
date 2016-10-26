@@ -1,0 +1,14 @@
+<h2>Bruger detaljer</h2>
+<nav>
+  <a [routerLink]="['..', previous]" *ngIf="previous">Forrige</a>
+  <span *ngIf="previous && next">|</span>
+  <a [routerLink]="['..', next]" *ngIf="next">Næste</a>
+</nav>
+<dl>
+  <dt>Id</dt>
+  <dd>{{user.id}}</dd>
+  <dt>Brugernavn</dt>
+  <dd>{{user.name}}</dd>
+  <dt>Rolle</dt>
+  <dd>{{user.role}}</dd>
+</dl>
